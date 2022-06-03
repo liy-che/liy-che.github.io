@@ -171,14 +171,14 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
 		font-weight: bold;
 		line-height: 1.5;
-		margin: 0 0 0.5em 0;
+		margin: 0 0 0.2em 0;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -187,7 +187,7 @@ input, select, textarea {
 		}
 
 	h1 {
-		font-size: 2.75em;
+		font-size: 4.75em;
 	}
 
 		h1.major {
@@ -3209,6 +3209,7 @@ input, select, textarea {
 			padding: 5em 5em 3em 5em ;
 			max-width: 100%;
 			width: 75em;
+			text-align: center;
 		}
 
 			@media screen and (max-width: 1680px) {
@@ -3223,6 +3224,7 @@ input, select, textarea {
 
 				.wrapper > .inner {
 					width: 100%;
+					text-align: center;
 				}
 
 			}
@@ -3465,7 +3467,7 @@ input, select, textarea {
 /* Wrapper (main) */
 
 	#sidebar + #wrapper {
-		margin-left: 18em;
+		margin-left: 12em;
 	}
 
 		@media screen and (max-width: 1280px) {
@@ -3492,7 +3494,7 @@ input, select, textarea {
 /* Footer */
 
 	#sidebar + #wrapper + #footer {
-		margin-left: 18em;
+		margin-left: 12em;
 	}
 
 		@media screen and (max-width: 1280px) {
@@ -3531,9 +3533,9 @@ input, select, textarea {
 		overflow-x: hidden;
 		overflow-y: auto;
 		position: fixed;
-		text-align: right;
+		text-align: center;
 		top: 0;
-		width: 18em;
+		width: 12em;
 		z-index: 10000;
 	}
 
@@ -3907,3 +3909,642 @@ input, select, textarea {
 			}
 
 		}
+
+ 
+/* ------------------------------------------------------------------- 
+ * ## vertical spacing and typescale from CEEVEE
+ * ------------------------------------------------------------------- */
+ :root {
+
+    /* spacing
+     * base font size: 18px 
+     * vertical space unit : 32px
+     */
+    --base-size: 62.5%;
+    --base-font-size: 1.8rem;
+    --space: 3.2rem;
+
+    /* vertical spacing 
+     */
+	--vspace-0_125: calc(0.125 * var(--space));
+	--vspace-0_25 : calc(0.25 * var(--space));
+	--vspace-0_5  : calc(0.5 * var(--space));
+	--vspace-0_75 : calc(0.75 * var(--space));
+	--vspace-0_875: calc(0.875 * var(--space));
+    --vspace-1    : calc(var(--space));
+    --vspace-1_25 : calc(1.25 * var(--space));
+}
+
+/* on mobile devices below 600px
+ */
+@media screen and (max-width: 600px) {
+    :root {
+        --base-font-size: 1.6rem;
+        --space: 2.8rem;
+    }
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## hero scrolldown from CEEVEE
+ * ------------------------------------------------------------------- */
+
+ .s-hero__scroll {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    bottom: var(--vspace-0_5);
+}
+
+.s-hero__scroll-link .scroll-arrow {
+    display: block;
+    width: var(--vspace-0_75);
+    height: var(--vspace-0_75);
+    border-radius: 50%;
+    border: 2px solid white;
+	background-color: rgba(255, 255, 255, 0);
+    position: relative;
+	-moz-transition: background-color 0.3s;
+	-webkit-transition: background-color 0.3s;
+	-ms-transition: background-color 0.3s;
+	transition: background-color 0.3s;
+}
+
+.s-hero__scroll-link .scroll-arrow:hover, 
+.s-hero__scroll-link .scroll-arrow:focus {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.s-hero__scroll-link .scroll-arrow svg {
+    height: 2rem;
+    width: 2rem;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.s-hero__scroll-link .scroll-arrow svg path {
+    fill: white;
+}
+
+.s-hero__scroll-link .scroll-arrow:hover svg path,
+.s-hero__scroll-link .scroll-arrow:focus svg path {
+    fill: #5e42a6;
+}
+
+
+/** 
+ * ===================================================================
+ * 03. grid - (_grid.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+ .row {
+	width: 94%;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+.row:before,
+.row:after {
+	content: "";
+	display: table;
+}
+
+.row:after {
+	clear: both;
+}
+
+.row .row {
+	width: auto;
+	max-width: none;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+[class*="col-"],
+.bgrid {
+	float: left;
+}
+
+[class*="col-"] + [class*="col-"].end {
+	float: right;
+}
+
+[class*="col-"] {
+	padding: 0 20px;
+}
+
+.col-one {
+	width: 8.33333%;
+}
+
+.col-two,
+.col-1-6 {
+	width: 16.66667%;
+}
+
+.col-three,
+.col-1-4 {
+	width: 25%;
+}
+
+.col-four,
+.col-1-3 {
+	width: 33.33333%;
+}
+
+.col-five {
+	width: 41.66667%;
+}
+
+.col-six,
+.col-1-2 {
+	width: 50%;
+}
+
+.col-seven {
+	width: 58.33333%;
+}
+
+.col-eight,
+.col-2-3 {
+	width: 66.66667%;
+}
+
+.col-nine,
+.col-3-4 {
+	width: 75%;
+}
+
+.col-ten,
+.col-5-6 {
+	width: 83.33333%;
+}
+
+.col-eleven {
+	width: 91.66667%;
+}
+
+.col-twelve,
+.col-full {
+	width: 100%;
+}
+
+/**
+ * small screens - (_grid.scss)
+ * --------------------------------------------------------------- 
+ */
+@media screen and (max-width:1024px) {
+	.row .row {
+		margin-left: -18px;
+		margin-right: -18px;
+	}
+
+	[class*="col-"] {
+		padding: 0 18px;
+	}
+}
+
+/**
+ * tablets - (_grid.scss)
+ * --------------------------------------------------------------- 
+ */
+@media screen and (max-width:768px) {
+	.row {
+		width: auto;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.row .row {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+
+	[class*="col-"] {
+		padding: 0 15px;
+	}
+
+	.tab-1-4 {
+		width: 25%;
+	}
+
+	.tab-1-3 {
+		width: 33.33333%;
+	}
+
+	.tab-1-2 {
+		width: 50%;
+	}
+
+	.tab-2-3 {
+		width: 66.66667%;
+	}
+
+	.tab-3-4 {
+		width: 75%;
+	}
+
+	.tab-full {
+		width: 100%;
+	}
+
+}
+
+/**
+ * large mobile devices - (_grid.scss)
+ * --------------------------------------------------------------- 
+ */
+@media screen and (max-width:600px) {
+	.row {
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+	.row .row {
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+
+	[class*="col-"] {
+		padding: 0 10px;
+	}
+
+	.mob-1-4 {
+		width: 25%;
+	}
+
+	.mob-1-2 {
+		width: 50%;
+	}
+
+	.mob-3-4 {
+		width: 75%;
+	}
+
+	.mob-full {
+		width: 100%;
+	}
+
+}
+
+/**
+ * small mobile devices - (_grid.scss)
+ * --------------------------------------------------------------- 
+ */
+@media screen and (max-width:400px) {
+	.row .row {
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	[class*="col-"] {
+		width: 100% !important;
+		float: none !important;
+		clear: both !important;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 0;
+	}
+
+	[class*="col-"] + [class*="col-"].end {
+		float: none;
+	}
+
+}
+
+
+
+/** 
+ * ===================================================================
+ * 03. typography & general theme styles - (_document-setup.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+ p.lead {
+	font-family: "lora-regular", serif;
+	font-size: 2rem;
+	line-height: 1.8;
+	color: #888888;
+}
+@media only screen and (max-width:768px) {
+	p.lead {
+		font-size: 1.7rem;
+	}
+}
+
+/** 
+ * ===================================================================
+ * 06. buttons - (_button-essentials.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+ .button.button-primary,
+ a.button.button-primary,
+ button.button-primary,
+ input[type="submit"].button-primary,
+ input[type="reset"].button-primary,
+ input[type="button"].button-primary {
+	 background: #313131;
+	 color: #FFFFFF;
+ }
+ .button.button-primary:hover,
+ a.button.button-primary:hover,
+ button.button-primary:hover,
+ input[type="submit"].button-primary:hover,
+ input[type="reset"].button-primary:hover,
+ input[type="button"].button-primary:hover,
+ .button.button-primary:focus,
+ button.button-primary:focus,
+ input[type="submit"].button-primary:focus,
+ input[type="reset"].button-primary:focus,
+ input[type="button"].button-primary:focus {
+	 background: #1f1f1f;
+ }
+
+
+
+/** 
+ * ===================================================================
+ * 07. other components - (_others.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+/**
+ * skillbars - (_skillbars.scss)
+ * -------------------------------------------------------------------
+ */
+ .skill-bars {
+	list-style: none;
+	margin: 6rem 0 3rem;
+}
+.skill-bars li {
+	height: .6rem;
+	background: #a1a1a1;
+	width: 100%;
+	margin-bottom: 6rem;
+	padding: 0;
+	position: relative;
+}
+.skill-bars li strong {
+	position: absolute;
+	left: 0;
+	top: -3rem;
+	font-family: "poppins-bold", sans-serif;
+	color: #313131;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	font-size: 1.5rem;
+	line-height: 2.4rem;
+}
+.skill-bars li .progress {
+	background: #313131;
+	position: relative;
+	height: 100%;
+}
+.skill-bars li .progress span {
+	position: absolute;
+	right: 0;
+	top: -3.6rem;
+	display: block;
+	font-family: "poppins-regular", sans-serif;
+	color: white;
+	font-size: 1.1rem;
+	line-height: 1;
+	background: #313131;
+	padding: .6rem .6rem;
+	border-radius: 3px;
+}
+.skill-bars li .progress span::after {
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	margin-left: -5px;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	border-top: 5px solid #313131;
+	content: "";
+}
+
+.skill-bars li .percent5   { width: 5%; }
+.skill-bars li .percent10  { width: 10%; }
+.skill-bars li .percent15  { width: 15%; }
+.skill-bars li .percent20  { width: 20%; }
+.skill-bars li .percent25  { width: 25%; }
+.skill-bars li .percent30  { width: 30%; }
+.skill-bars li .percent35  { width: 35%; }
+.skill-bars li .percent40  { width: 40%; }
+.skill-bars li .percent45  { width: 45%; }
+.skill-bars li .percent50  { width: 50%; }
+.skill-bars li .percent55  { width: 55%; }
+.skill-bars li .percent60  { width: 60%; }
+.skill-bars li .percent65  { width: 65%; }
+.skill-bars li .percent70  { width: 70%; }
+.skill-bars li .percent75  { width: 75%; }
+.skill-bars li .percent80  { width: 80%; }
+.skill-bars li .percent85  { width: 85%; }
+.skill-bars li .percent90  { width: 90%; }
+.skill-bars li .percent95  { width: 95%; }
+.skill-bars li .percent100 { width: 100%; }
+
+
+/** 
+ * ===================================================================
+ * 08. common styles (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+ .section-intro {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 3.6rem;
+	position: relative;
+}
+.section-intro h1 {
+	font-family: "poppins-semibold", serif;
+	font-size: 3.6rem;
+	color: #313131;
+	line-height: 1.25;
+	margin-bottom: 1.2rem;
+}
+.section-intro h5 {
+	color: #FF0077;
+	font-size: 1.6rem;
+	line-height: 1.875;
+	margin-bottom: 0.3rem;
+	letter-spacing: .4rem;
+}
+
+
+/**
+ * responsive:
+ * common styles
+ * ------------------------------------------------------------------- 
+ */
+ @media only screen and (max-width:768px) {
+	.section-intro {
+		max-width: 650px;
+	}
+	.section-intro h1 {
+		font-size: 3rem;
+	}
+}
+@media only screen and (max-width:600px) {
+	.section-intro h1 {
+		font-size: 2.6rem;
+	}
+	.section-intro h5 {
+		font-size: 1.5rem;
+		letter-spacing: .3rem;
+	}
+}
+@media only screen and (max-width:400px) {
+	.section-intro h1 {
+		font-size: 2.4rem;
+	}
+}
+
+
+/** 
+ * ===================================================================
+ * 11. about - (_layout.scss) FROM KARDS
+ *
+ * ------------------------------------------------------------------- 
+ */
+#about {
+	padding-top: 12rem;
+	padding-bottom: 15rem;
+}
+#about .section-intro {
+	margin-bottom: 3rem;
+}
+
+.intro-info {
+	margin-top: 4.2rem;
+	margin-right: -30px;
+	margin-left: -30px;
+}
+.intro-info img {
+	height: 9rem;
+	width: 9rem;
+	border-radius: 50%;
+	margin: .9rem 0 0 0;
+	float: left;
+}
+.intro-info .lead {
+	text-align: left;
+	padding-left: 13rem;
+}
+
+.about-content {
+	position: relative;
+	text-align: left;
+	max-width: 850px;
+	margin-bottom: 3.6rem;
+}
+.about-content h3 {
+	font-family: "poppins-bold", sans-serif;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+	letter-spacing: .25rem;
+}
+.about-content .info-list {
+	list-style: none;
+	margin-left: 0;
+}
+.about-content .info-list li {
+	padding: 0 0 1.5rem 0;
+	margin-bottom: .6rem;
+}
+.about-content .info-list li strong {
+	font-family: "poppins-bold", sans-serif;
+	color: #313131;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	font-size: 1.5rem;
+	line-height: 3rem;
+}
+.about-content .info-list li span {
+	display: block;
+	font-family: "poppins-regular", sans-serif;
+	color: #888888;
+	font-size: 1.5rem;
+	line-height: 1;
+}
+.about-content .skill-bars {
+	margin-top: 6rem;
+}
+
+.button-section {
+	text-align: center;
+}
+.button-section .button {
+	width: 250px;
+}
+.button-section [class*="col-"] .button:first-child {
+	margin-right: 4rem;
+}
+
+/**
+ * responsive:
+ * about
+ * ------------------------------------------------------------------- 
+ */
+@media only screen and (max-width:1024px) {
+	.intro-info {
+		margin-right: 0;
+		margin-left: 0;
+	}
+}
+@media only screen and (max-width:768px) {
+	.intro-info img {
+		height: 7.8rem;
+		width: 7.8rem;
+	}
+	.intro-info .lead {
+		padding-left: 11rem;
+	}
+	.about-content h3 {
+		text-align: center;
+	}
+	.about-content .info-list, .about-content .skill-bars {
+		margin-bottom: 4.2rem;
+	}
+	.button-section .button {
+		width: 100%;
+		margin-bottom: 3rem;
+	}
+	.button-section [class*="col-"] .button:first-child {
+		margin-right: 0;
+	}
+}
+@media only screen and (max-width:600px) {
+	.intro-info {
+		text-align: center;
+		margin-top: 3rem;
+	}
+	.intro-info img {
+		height: 6.6rem;
+		width: 6.6rem;
+		float: none;
+		display: inline-block;
+	}
+	.intro-info .lead {
+		padding-left: 0;
+		text-align: center;
+	}
+}
+
+
