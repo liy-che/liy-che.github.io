@@ -6,6 +6,8 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+/* Reset */
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -1758,7 +1760,6 @@ input, select, textarea {
 
 				.wrapper > .inner {
 					width: 100%;
-					text-align: center;
 				}
 
 			}
@@ -2067,7 +2068,7 @@ input, select, textarea {
 		overflow-x: hidden;
 		overflow-y: auto;
 		position: fixed;
-		text-align: center;
+		text-align: right;
 		top: 0;
 		width: 12em;
 		z-index: 10000;
@@ -2444,6 +2445,7 @@ input, select, textarea {
 
 		}
 
+/* Cut off */
  
 /* ===================================================================
  * # SETTINGS from LUTHER
@@ -2643,6 +2645,42 @@ input, select, textarea {
 	 }
  }
 
+ /* ------------------------------------------------------------------- 
+ * ## grid variables
+ * ------------------------------------------------------------------- */
+:root {
+
+    /* widths for rows and containers
+     */
+    --width-full     : 100%;
+    --width-max      : 1200px;
+    --width-wide     : 1400px;
+    --width-wider    : 1600px;
+    --width-widest   : 1800px;
+    --width-narrow   : 1000px;
+    --width-narrower : 800px;
+    --width-grid-max : var(--width-max);
+
+    /* gutter
+     */
+    --gutter : 2rem;
+}
+
+/* on medium screen devices
+ */
+@media screen and (max-width: 1200px) {
+    :root {
+        --gutter : 1.6rem;
+    }
+}
+
+/* on mobile devices
+ */
+@media screen and (max-width: 600px) {
+    :root {
+        --gutter : 1rem;
+    }
+}
 
 /* ------------------------------------------------------------------- 
  * ## hero scrolldown from CEEVEE
@@ -2694,6 +2732,8 @@ input, select, textarea {
     fill: #5e42a6;
 }
 
+
+/* Styles from KARDS */
 
 /** 
  * ===================================================================
@@ -3201,12 +3241,12 @@ input, select, textarea {
  *
  * ------------------------------------------------------------------- */
 
- .s-works {
-    padding-top    : var(--vspace-5);
-    padding-bottom : var(--vspace-3_5);
+ #projects {
+    padding-top    : 2rem;
+    padding-bottom : 3rem;
 }
 
-.s-works .h1 {
+#projects .h1 {
     margin-top : 0;
 }
 
@@ -3490,7 +3530,7 @@ input, select, textarea {
 }
 
 @media screen and (max-width: 800px) {
-    .s-works {
+    #projects {
         padding-top    : var(--vspace-4);
         padding-bottom : var(--vspace-3);
     }
@@ -3617,7 +3657,7 @@ input, select, textarea {
 /* row 
  */
  .row {
-    width     : 100%;
+    width     : 92%;
     max-width : var(--width-grid-max);
     margin    : 0 auto;
     display   : flex;
