@@ -1,10 +1,56 @@
 @import url(fontawesome-all.min.css);
 
-/*
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/* =================================================================== 
+ * Hyperspace by HTML5 UP
+ * html5up.net | @ajlkn
+ * Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+ * ------------------------------------------------------------------
+ *
+ * TOC:
+ *
+ * # Reset
+ * # Basic
+ * # Type
+ * # Box
+ * # Button
+ * # Features
+ * # Form
+ * # Icon 
+ * # Image
+ * # List
+ * # Actions
+ * # Contact
+ * # Icons 
+ * # menu
+ * # Section/Article
+ * # Split
+ * # Spotlights
+ * # table
+ * # Wrapper
+ * # Header
+ * # Wrapper (main)
+ * # footer
+ * # Sidebar
+ * # Intro 
+ * # Settings from LUTHER
+ *      ## fonts 
+ *      ## colors 
+ *      ## spacing and typescale 
+ *      ## grid variables
+ * # hero scrolldown from CEEVEE
+ * # Styles from KARDS
+ *      ## 03. typography & general theme styles - (_document-setup.scss)
+ *      ## 06. buttons - (_button-essentials.scss)
+ *      ## 07. other components - (_others.scss)
+ *            ### skillbars - (_skillbars.scss)
+ *      ## 08. common styles (_layout.scss)
+ *      ## 11. about - (_layout.scss)
+ *      ## 12. resume - (_layout.scss)
+ * # Projects from LUTHER
+ * # theme-specific typography classes from LUTHER
+ * # GRID from LUTHER
+ *
+ * ------------------------------------------------------------------ */
 
 /* Reset */
 
@@ -2934,7 +2980,7 @@ input, select, textarea {
 
 /** 
  * ===================================================================
- * 11. about - (_layout.scss) FROM KARDS
+ * 11. about - (_layout.scss)
  *
  * ------------------------------------------------------------------- 
  */
@@ -3596,11 +3642,10 @@ input, select, textarea {
 }
 
 
-
 /* ------------------------------------------------------------------- 
- * ## theme-specific typography classes from LUTHER
+ * ## theme-specific typography classes
  * ------------------------------------------------------------------- */
-.text-pretitle {
+ .text-pretitle {
     font-family    : var(--font-1);
     font-size      : var(--text-sm);
     font-weight    : 400;
@@ -3613,28 +3658,28 @@ input, select, textarea {
     position       : relative;
 }
 
+.text-pretitle.with-line {
+    color        : var(--color-1);
+    padding-left : 6rem;
+    transform    : translateX(-6rem);
+}
 
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family            : var(--font-2);
-    font-weight            : 400;
-    color                  : var(--color-text-dark);
-    font-variant-ligatures : common-ligatures;
-    text-rendering         : optimizeLegibility;
+.text-pretitle.with-line::before {
+    content          : "";
+    display          : block;
+    height           : 1px;
+    width            : 4rem;
+    background-color : rgba(255, 255, 255, 0.5);
+    position         : absolute;
+    top              : 50%;
+    left             : 0;
 }
-.h1 {
-    margin-top    : var(--vspace-2_5);
-    margin-bottom : var(--vspace-0_75);
-}
-.h1 {
-    font-size      : var(--text-display-1);
-    line-height    : var(--vspace-2);
-    letter-spacing : -.01em;
-}
-@media screen and (max-width: 500px) {
-    .h1 {
-        font-size   : var(--text-xxxl);
-        line-height : calc(1.625 * var(--space));
-    }
+
+.text-huge-title {
+    --text-huge : 10.8rem;
+    font-size   : var(--text-huge);
+    line-height : 1.0740;
+    margin-top  : 0;
 }
 
 
