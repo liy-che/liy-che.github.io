@@ -197,10 +197,10 @@
 	//    push the lightbox into an array
 const folioLinks = document.querySelectorAll('.folio-list__item-link');
 const modals = [];
-const dismiss = document.querySelector(".popup-modal-dismiss");
 
 folioLinks.forEach(function(link) {
 	let modalbox = link.getAttribute('href');
+	let dismiss = document.querySelector(modalbox + " .popup-modal-dismiss");
 	let instance = basicLightbox.create(
 		document.querySelector(modalbox),
 		{
@@ -208,7 +208,7 @@ folioLinks.forEach(function(link) {
 				//detect Escape key press
 				document.addEventListener("keydown", function(event) {
 					event = event || window.event;
-					if (event.key === 'escape') {
+					if (event.key === 'Escape') {
 						instance.close();
 					}
 				});
