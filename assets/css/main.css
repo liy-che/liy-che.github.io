@@ -3357,14 +3357,6 @@ input, select, textarea {
     fill: #5e42a6;
 }
 
-	@media screen and (max-width: 736px) {
-
-		.s-hero__scroll {
-			display: none;
-		}
-
-	}
-
 
 /* Styles from KARDS */
 
@@ -3868,7 +3860,7 @@ input, select, textarea {
  * ------------------------------------------------------------------- 
  */
 .contact-info {
-	margin: 4.8rem auto 0;
+	margin: 0rem auto 0;
 	font-family: "poppins-regular", sans-serif;
 	font-size: 1.5rem;
 	text-align: center;
@@ -3905,6 +3897,10 @@ input, select, textarea {
     list-style        : none;
     margin-bottom     : var(--vspace-1);
     margin-left       : 0;
+}
+
+.folio-list a {
+	border: none;
 }
 
 .folio-list__item {
@@ -4019,7 +4015,7 @@ input, select, textarea {
     display          : block;
     width            : 0;
     height           : 1px;
-    background-color : var(--color-text-light);
+    background-color : var(--color-text);
     position         : absolute;
     top              : 0;
     left             : 0;
@@ -4033,7 +4029,7 @@ input, select, textarea {
 
 .folio-list__item-cat {
     font-size   : var(--text-sm);
-    color       : var(--color-text-light);
+    color       : var(--color-text);
     line-height : var(--vspace-0_75);
     margin-left : .2rem;
 }
@@ -4205,13 +4201,6 @@ input, select, textarea {
 
     .folio-list__item-cat {
         font-size : var(--text-sm);
-    }
-}
-
-@media screen and (max-width: 800px) {
-    #projects {
-        padding-top    : var(--vspace-4);
-        padding-bottom : var(--vspace-3);
     }
 }
 
