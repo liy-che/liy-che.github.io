@@ -2691,8 +2691,7 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				.wrapper.fullscreen {
-					padding: 2em 0;
-					min-height: 0;
+					min-height: 100vh;
 				}
 
 					body.is-ie .wrapper.fullscreen {
@@ -3274,6 +3273,10 @@ input, select, textarea {
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
 	}
+
+		#intro #message {
+			letter-spacing: .1em;
+		}
 
 		#intro p {
 			font-size: 1.25em;

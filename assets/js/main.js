@@ -229,3 +229,19 @@ folioLinks.forEach(function(link, index) {
 		modals[index].show();
 	});
 });
+
+
+
+let counter = 0;
+
+function nextMsg() {
+  $('#message').html(messages[counter % messages.length]).fadeIn(1000).delay(2000).fadeOut(1000, nextMsg);
+  ++counter;
+};
+let messages = [
+  "Hello,",
+  "您好,",
+  "안녕하세요,"
+];
+$('#message').hide();
+nextMsg();
