@@ -3423,13 +3423,25 @@ input, select, textarea {
  * skillbars - (_skillbars.scss)
  * -------------------------------------------------------------------
  */
- .skill-bars {
+ .skill-bars li {
 	list-style: none;
 }
-.skill-bars li {
+
+.skill-bars ul li {
+	margin-left: 4rem;
+	list-style: circle;
+
+}
+
+.about-content .info-list .skill-bars li {
 	width: 100%;
 	padding: 0;
 	position: relative;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+.about-content ul {
+	margin-bottom: 0;
 }
 .skill-bars li strong {
 	font-family: "poppins-bold", sans-serif;
@@ -3438,18 +3450,6 @@ input, select, textarea {
 	letter-spacing: .2rem;
 	font-size: 1.5rem;
 	line-height: 2.4rem;
-}
-
-ul ul li {
-	margin-left: 4rem;
-}
-
-ul.skill-bars > li {
-	margin-bottom: 1rem;
-}
-
-.skill-bars ul {
-	margin-bottom: 0;
 }
 
 
@@ -3476,7 +3476,6 @@ ul.skill-bars > li {
 .section-intro h1 {
 	font-family: "poppins-semibold", serif;
 	font-size: 3.6rem;
-	color: #313131;
 	line-height: 1.25;
 	margin-bottom: 1.2rem;
 }
@@ -3553,6 +3552,7 @@ ul.skill-bars > li {
 	font-size: 1.8rem;
 	text-transform: uppercase;
 	letter-spacing: .25rem;
+	margin-bottom: -3.6rem;
 }
 .about-content .info-list {
 	list-style: none;
@@ -3573,12 +3573,7 @@ ul.skill-bars > li {
 .about-content .info-list li span {
 	display: block;
 	font-family: "poppins-regular", sans-serif;
-	color: #888888;
 	font-size: 1.5rem;
-	line-height: 1;
-}
-.about-content .skill-bars {
-	margin: 0 0 3rem;
 }
 
 .about-content [class*="lg-"] {	
@@ -3619,9 +3614,6 @@ ul.skill-bars > li {
 	}
 	.about-content h3 {
 		text-align: center;
-	}
-	.about-content .info-list, .about-content .skill-bars {
-		margin-bottom: 4.2rem;
 	}
 	.button-section .button {
 		width: 100%;
