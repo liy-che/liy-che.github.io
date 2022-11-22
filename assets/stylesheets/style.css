@@ -87,6 +87,10 @@ ul.inline {
     font-style: italic;
 }
 
+.project-detail p {
+    line-height: 1.3em;
+}
+
 .button {
     appearance: none;
     background-color: #313131;
@@ -243,6 +247,7 @@ footer.container {
 footer .inline {
     margin: 0 auto;
     margin-bottom: 2em;
+    margin-top: 1em;
 }
 
 /* Medium screens */
